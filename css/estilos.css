@@ -20,16 +20,20 @@
 body {
     display: grid;
     min-height: 100vh;
-    grid-template-rows: auto auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
 }
 
 header {
     display: grid;
-    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-areas: 'logo titles titles titles'
+                         'nav  nav    nav    nav';
     background-color: #612910;
+    justify-content: left;
+    align-items: center;
 }
 
 .logo {
+    grid-area: logo;
     width: 7.5rem;
     height: 7.5rem;
     border-radius: 50%;
@@ -37,6 +41,8 @@ header {
 }
 
 .title-container {
+    width: 70vw;
+    grid-area: titles;
     margin-top: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -50,16 +56,18 @@ header {
     /* font-family: 'Aref Ruqaa Ink', serif; */
     font-size: 300%;
     font-weight: bolder;
-    color: #B57400;
+    /* color: #B57400;  Color para efecto sombra */
+    color: #D3A629;
     text-align: center;
 
-    /* Efecto sombra */
+    /* Efecto sombra
     text-shadow:
         0 0 4px #E2C454,
         0 0 6px #E2C454,
         0 0 8px #E2C454,
         0 0 10px #E2C454,
         0 0 11px #E2C454;
+     */
 }
 
 .title2 {
@@ -71,6 +79,7 @@ header {
 }
 
 nav {
+    grid-area: nav;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -291,9 +300,92 @@ footer p {
 
 /* Smartphone */
 @media screen and (max-width: 767px) {
+    header {
+        grid-template-areas: 'logo titles titles nav';
+        justify-content: space-around;
+    }
+
+    .navbar-container nav{
+        position: absolute;
+        top: 4rem;
+        right: 2rem;
+        width: 50%;
+        height: 50%;
+        background-color: #612910;
+        opacity: 1;
+        text-align: center;
+        font-size: 1.5rem;
+        border-radius: 15px;
+        border: solid black 1px;
+        
+    }
+    
+    .navbar-container nav li{
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    #menu, #menu-check {
+        display: none;
+    }
+    
+    #menu-check:not(:checked) ~ nav {
+        display: none;
+    }
+    
+    #menu-check:checked ~ nav{
+        display: block;
+    }
+    
+    #menu {
+        display: block;
+        color: #D3A629;
+        font-size: 30px;
+        font-weight: bold;
+        z-index: 9999;
+    }
+
+    #menu:hover{
+        color: #E2C454;
+    }
+    
+    #menu-cerrar{
+        display: none;
+    }
+    
+    #menu-check:checked ~ label #menu-abrir{
+        display: none;
+    }
+    
+    #menu-check:checked ~ label #menu-cerrar{
+        display: block;
+    }
+
+    .logo {
+        padding: 0;
+        margin-left: 1rem;
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .title-container {
+        width: 40vw;
+        margin-left: 2rem;
+    }
+    
+    .title1 {
+        font-size: 200%;
+    }
+    
+    .title2 {
+        font-size: 130%;
+    }
+
     nav ul {
         flex-direction: column;
         align-items: center;
+        padding: 0;
     }
     
     .details-container {
@@ -301,6 +393,10 @@ footer p {
         width: 100%;
         display: flex;
         flex-direction: row;
+    }
+
+    .details {
+        font-size: 0.8rem;
     }
 
     .groups-container {
