@@ -25,11 +25,10 @@ body {
 
 header {
     display: grid;
-    grid-template-areas: 'logo titles titles titles'
-                         'nav  nav    nav    nav';
+    grid-template-areas: 'logo titles titles'
+                         'nav  nav    nav';
     background-color: #612910;
     justify-content: left;
-    align-items: center;
 }
 
 .logo {
@@ -41,7 +40,7 @@ header {
 }
 
 .title-container {
-    width: 70vw;
+    width: 80vw;
     grid-area: titles;
     margin-top: 0.5rem;
     display: flex;
@@ -74,12 +73,22 @@ header {
     font-family: 'Ms Madi', cursive, Verdana, sans-serif;
     font-size: 170%;
     color: #D3A629;
-    text-align: center;
     padding-top: 0.5rem;
 }
 
-nav {
+#menu, #menu-check{
+    display: none;
+}
+
+#menu-check:not(:checked) ~ nav {
+    display: block;
+}
+
+.navbar-container {
     grid-area: nav;
+}
+
+nav {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -128,7 +137,7 @@ nav li a:hover::after {
     transform-origin: left;
 }
 
-.main-container {
+.main-index {
     margin-top: 0.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -230,6 +239,96 @@ nav li a:hover::after {
     text-align: center;
 }
 
+/* ------ Comienzan estilos para main de pagina "Encuentranos" ------ */
+.main-encuentranos {
+    display: grid;
+    grid-template-areas: 'texto map';
+}
+
+.redes-container ul div {
+    display: flex;
+    margin-left: 5rem;
+    align-items: center;
+}
+
+.texto {
+    grid-area: texto;
+    margin: 5rem;
+    font-family: 'ABeeZee', Verdana, sans-serif;
+    font-size: 130%;
+    
+}
+
+.texto p{
+    margin: 1rem;
+    text-indent: 5%;
+}
+
+.map {
+    grid-area: map;
+    margin: 2rem;
+}
+/* ------ Fin estilos para main de pagina "Encuentranos" ------ */
+
+/* ------ Comienzan estilos para main de pagina "Contacto" ------ */
+.main-contacto {
+    display: grid;
+    grid-template-areas: 'texto  form';
+    font-family: 'ABeeZee', Verdana, sans-serif;
+}
+
+.container {
+    grid-area: texto;
+}
+
+.subtitle {
+    margin-top: 2rem;
+    padding: 1rem 3rem 0 3rem;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+}
+
+form {
+    width: 95%;
+    margin: 1rem;
+    grid-area: form;
+    background: rgba(100, 100, 100, 0.3);
+    padding: 5rem;
+    border-radius: 10px;
+    font-family: 'Lato', Verdana, sans-serif;
+}
+
+form h2 {
+    margin-bottom: 1.5rem;
+    color: #612910;
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border: none;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+#boton {
+    background-color: #612910;
+    color: #D3A629;
+}
+
+#boton:hover {
+    cursor: pointer;
+}
+/* ------ Fin de Estilos para main pagina "Contacto" ----- */
+
+/* ------ Comienzan estilos para footer ------ */
 footer {
     display: inline-flex;
     width: 100%;
@@ -244,25 +343,35 @@ footer p {
     color: #D3A629;
     font-weight: bold;
 }
+/* ------ Fin estilos para footer ------ */
 
-.redes-container {
+/* ------ Comienzan Estilos para iconos de redes sociales ------  */
+.redes-container ul li {
+    display: block;
+    margin: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+}
+
+
+.redes-footer {
     display: flex;
     width: 45%;
     align-items: flex-start;
     justify-content: end;
 }
 
-.redes-container ul li {
+.redes-footer ul li {
     display: inline-block;
     margin: 0 0.3rem;
     width: 2rem;
     height: 2rem;
     text-align: center;
-    /* Centramos elementos a */
 }
 
 /* Estilos para elementos a del contenedor de iconos redes */
-.redes-container ul li a {
+.redes-footer ul li a, .redes-container ul li a {
     display: block;
     padding: 0 0.5rem;
     background: gray;
@@ -274,37 +383,42 @@ footer p {
 }
 
 /*Desenfoques al hacer hover*/
-.redes-container ul:hover a {
+.redes-footer ul:hover a{
     filter: blur(2px);
 }
 
 /*Enfoque en el elemento seleccionado*/
-.redes-container ul li a:hover {
+.redes-footer ul li a:hover, .redes-container ul li a:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 5px 5px 0px rgba(0, 0, 0, .4);
     filter: none;
 }
 
 /* Colores en elemento seleccionado segun red social*/
-.redes-container ul li .facebook:hover {
+.facebook:hover {
     background: var(--facebook);
 }
 
-.redes-container ul li .instagram:hover {
+.instagram:hover {
     background: var(--instagram);
 }
 
-.redes-container ul li .whatsapp:hover {
+.whatsapp:hover {
     background: var(--whatsapp);
 }
+/* ------ Fin Estilos para iconos de redes sociales ------  */
 
-/* Smartphone */
+
+/* Estilos para Smartphone */
 @media screen and (max-width: 767px) {
     header {
-        grid-template-areas: 'logo titles titles nav';
+        grid-template-areas: 'logo titles nav';
         justify-content: space-around;
     }
 
+    .navbar-container {
+        padding: 2rem;
+    }
     .navbar-container nav{
         position: absolute;
         top: 4rem;
@@ -314,6 +428,7 @@ footer p {
         background-color: #612910;
         opacity: 1;
         text-align: center;
+        justify-content: center;
         font-size: 1.5rem;
         border-radius: 15px;
         border: solid black 1px;
@@ -403,9 +518,30 @@ footer p {
         margin: 1rem 0;
         width: 100%;
     }
+
+    .main-encuentranos {
+        display: grid;
+        grid-template-areas: 'texto'
+                             'map';
+    }
+
+    .main-contacto {
+        display: grid;
+        grid-template-areas: 'texto'
+                             'form';
+    }
+
+    .redes-container ul div {
+        margin: 0;
+        justify-content: center;
+    }
+
+    form {
+        width: 100%;
+    }
 }
 
-/* Tablet */
+/* Estilos para Tablet */
 /* @media screen and (min-width: 768px) and (max-width: 1023px) {
 
 } */
