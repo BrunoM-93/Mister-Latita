@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css"> <!-- Hoja de estilos CSS -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon"><!-- Favicon -->
 
     <!--Libreria de animaciones-->
@@ -19,34 +19,7 @@
 </head>
 
 <body class="animate__animated animate__fadeIn">
-    <header>
-        <div><a href="index.html"><img class="logo" src="img/logo.png" alt="Mister Latita"></a></div>
-
-        <div class="title-container">
-            <div class="title1">
-                <p>Mister Latita</p>
-            </div>
-            <div class="title2">
-                <p>Almac&eacute;n de Bebidas</p>
-            </div>
-        </div>
-
-        <div class="navbar-container">
-            <input type="checkbox" id="menu-check">
-            <label id="menu" for="menu-check">
-                <span id="menu-abrir">&#9776;</span>
-                <span id="menu-cerrar">X</span>
-            </label>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="encuentranos.html">Encuentranos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header id="header"></header>
 
 
 
@@ -88,21 +61,10 @@
     </main>
 
 
-    <footer>
-        <p>Copyright &copy; 2022 - Mister Latita</p>
+    <footer id="footer"></footer>
 
-        <!-- Contenedor de iconos con links a redes sociales -->
-        <div class="redes-footer">
-            <ul>
-                <li><a class="facebook" href="https://www.facebook.com/elsrdelalatita" target="_blank"><i
-                            class="fa-brands fa-facebook"></i></a></li>
-                <li><a class="instagram" href="https://www.instagram.com/misterlatita/" target="_blank"><i
-                            class="fa-brands fa-instagram"></i></a></li>
-                <li><a class="whatsapp" href="https://api.whatsapp.com/send?phone=5493425317987" target="_blank"><i
-                            class="fa-brands fa-whatsapp"></i></a></li>
-            </ul>
-        </div>
-    </footer>
+    <script src="js/template-header.js"></script>
+    <script src="js/template-footer.js"></script>
 </body>
 
 </html>
