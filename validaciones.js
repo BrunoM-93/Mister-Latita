@@ -1,7 +1,7 @@
 (function(){
     
-    var formulario = document.getElementsByName('formulario')[0];
-        elementos = formulario.elements;
+    var formulario = document.getElementsByName('formulario')[0],
+        elementos = formulario.elements,
         boton = document.getElementById('boton');
 
     var validarNombre = function(e){
