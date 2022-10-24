@@ -1,3 +1,5 @@
+//Validaciones
+
 (function(){
     
     var formulario = document.getElementsByName('formulario')[0],
@@ -46,3 +48,11 @@
     formulario.addEventListener("submit", validar);
 }
 ())
+
+//Resetea el Formulario cuando lo envia
+
+window.onbeforeunload = () => {
+    for(const form of document.getElementsByName('formulario')) {
+        form.reset();
+    }
+}
