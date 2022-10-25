@@ -26,7 +26,7 @@ body {
 header {
     display: grid;
     grid-template-areas: 'logo titles titles'
-                         'nav  nav    nav';
+        'nav  nav    nav';
     background-color: #612910;
     justify-content: left;
 }
@@ -76,11 +76,12 @@ header {
     padding-top: 0.5rem;
 }
 
-#menu, #menu-check{
+#menu,
+#menu-check {
     display: none;
 }
 
-#menu-check:not(:checked) ~ nav {
+#menu-check:not(:checked)~nav {
     display: block;
 }
 
@@ -145,7 +146,7 @@ nav li a:hover::after {
 }
 
 .details-container {
-    margin-left: 5%  ;
+    margin-left: 5%;
     width: 40%;
     display: flex;
     flex-wrap: wrap;
@@ -205,7 +206,7 @@ nav li a:hover::after {
 }
 
 .groups-container img:hover {
-    transform: scale(1.1,1.1);
+    transform: scale(1.1, 1.1);
 }
 
 .products-container {
@@ -239,6 +240,44 @@ nav li a:hover::after {
     text-align: center;
 }
 
+/* ------ Comienzan estilos para main de pagina "Nosotros" ------ */
+.main-nosotros {
+    display: grid;
+    grid-template-areas: 'texto  sello';
+    font-family: 'ABeeZee', Verdana, sans-serif;
+    justify-items: center;
+}
+
+/* .texto y .texto p aplica para nosotros.html y encuentranos.html */
+.texto {
+    grid-area: texto;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'ABeeZee', Verdana, sans-serif;
+    font-size: 130%;
+}
+
+.texto p {
+    padding-left: 5rem;
+    padding-bottom: 1rem;
+    text-indent: 5%;
+    text-align: justify;
+}
+
+.sello {
+    grid-area: sello;
+    width: 39vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5rem;
+}
+
+/* ------ Fin de Estilos para main pagina "Nosotros" ----- */
+
 /* ------ Comienzan estilos para main de pagina "Encuentranos" ------ */
 .main-encuentranos {
     display: grid;
@@ -251,28 +290,16 @@ nav li a:hover::after {
     align-items: center;
 }
 
-.texto {
-    grid-area: texto;
-    margin: 3rem;
-    font-family: 'ABeeZee', Verdana, sans-serif;
-    font-size: 130%;
-    
-}
-
-.texto p{
-    margin: 1rem;
-    text-indent: 5%;
-}
-
 .map {
     grid-area: map;
     margin: 2rem;
 }
 
 .map iframe {
-    width: 600px;
-    height: 450px;
+    width: 450px;
+    height: 350px;
 }
+
 /* ------ Fin estilos para main de pagina "Encuentranos" ------ */
 
 /* ------ Comienzan estilos para main de pagina "Contacto" ------ */
@@ -310,7 +337,9 @@ form h2 {
     text-align: center;
 }
 
-input, textarea, #boton {
+input,
+textarea,
+#boton {
     width: 100%;
     margin-bottom: 1.5rem;
     padding: 0.5rem;
@@ -334,6 +363,7 @@ textarea {
 #boton:hover {
     cursor: pointer;
 }
+
 /* ------ Fin de Estilos para main pagina "Contacto" ----- */
 
 /* ------ Comienzan estilos para footer ------ */
@@ -351,6 +381,7 @@ footer p {
     color: #D3A629;
     font-weight: bold;
 }
+
 /* ------ Fin estilos para footer ------ */
 
 /* ------ Comienzan Estilos para iconos de redes sociales ------  */
@@ -379,7 +410,8 @@ footer p {
 }
 
 /* Estilos para elementos a del contenedor de iconos redes */
-.redes-footer ul li a, .redes-container ul li a {
+.redes-footer ul li a,
+.redes-container ul li a {
     display: block;
     padding: 0 0.5rem;
     background: gray;
@@ -391,12 +423,13 @@ footer p {
 }
 
 /*Desenfoques al hacer hover*/
-.redes-footer ul:hover a{
+.redes-footer ul:hover a {
     filter: blur(2px);
 }
 
 /*Enfoque en el elemento seleccionado*/
-.redes-footer ul li a:hover, .redes-container ul li a:hover {
+.redes-footer ul li a:hover,
+.redes-container ul li a:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 5px 5px 0px rgba(0, 0, 0, .4);
     filter: none;
@@ -414,6 +447,7 @@ footer p {
 .whatsapp:hover {
     background: var(--whatsapp);
 }
+
 /* ------ Fin Estilos para iconos de redes sociales ------  */
 
 
@@ -427,7 +461,8 @@ footer p {
     .navbar-container {
         padding: 2rem;
     }
-    .navbar-container nav{
+
+    .navbar-container nav {
         position: absolute;
         top: 4rem;
         right: 2rem;
@@ -440,27 +475,28 @@ footer p {
         font-size: 1.5rem;
         border-radius: 15px;
         border: solid black 1px;
-        
+
     }
-    
-    .navbar-container nav li{
+
+    .navbar-container nav li {
         margin-top: 1.5rem;
         display: flex;
         justify-content: center;
     }
 
-    #menu, #menu-check {
+    #menu,
+    #menu-check {
         display: none;
     }
-    
-    #menu-check:not(:checked) ~ nav {
+
+    #menu-check:not(:checked)~nav {
         display: none;
     }
-    
-    #menu-check:checked ~ nav{
+
+    #menu-check:checked~nav {
         display: block;
     }
-    
+
     #menu {
         display: block;
         color: #D3A629;
@@ -469,19 +505,19 @@ footer p {
         z-index: 9999;
     }
 
-    #menu:hover{
+    #menu:hover {
         color: #E2C454;
     }
-    
-    #menu-cerrar{
+
+    #menu-cerrar {
         display: none;
     }
-    
-    #menu-check:checked ~ label #menu-abrir{
+
+    #menu-check:checked~label #menu-abrir {
         display: none;
     }
-    
-    #menu-check:checked ~ label #menu-cerrar{
+
+    #menu-check:checked~label #menu-cerrar {
         display: block;
     }
 
@@ -496,11 +532,11 @@ footer p {
         width: 40vw;
         margin-left: 2rem;
     }
-    
+
     .title1 {
         font-size: 200%;
     }
-    
+
     .title2 {
         font-size: 130%;
     }
@@ -510,7 +546,7 @@ footer p {
         align-items: center;
         padding: 0;
     }
-    
+
     .details-container {
         margin: 0;
         width: 100%;
@@ -527,14 +563,19 @@ footer p {
         width: 100%;
     }
 
+    .sello {
+        display:none !important;
+    }
+
     .main-encuentranos {
         display: grid;
         grid-template-areas: 'texto'
-                             'map';
+            'map';
         justify-items: center;
     }
 
-    .texto, .map iframe {
+    .texto,
+    .map iframe {
         width: 80vw;
         margin: 0.5rem;
 
@@ -543,7 +584,7 @@ footer p {
     .main-contacto {
         display: grid;
         grid-template-areas: 'texto'
-                             'form';
+            'form';
         justify-items: center;
     }
 
@@ -564,6 +605,27 @@ footer p {
 
 /* Estilos para Tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-nosotros {
+        display: grid;
+        grid-template-areas: 'sello texto';
+        justify-items: center;
+    }
+
+    .texto {
+        width: auto;
+    }
+
+    .texto p {
+        padding: 1rem;
+        text-indent: 5%;
+        text-align: justify;
+    }
+
+    .sello {
+        width: auto;
+        padding: 0;
+    }
+
     .main-encuentranos {
         display: grid;
         grid-template-areas: 'texto'
