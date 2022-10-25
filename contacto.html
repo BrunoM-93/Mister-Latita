@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css"> <!-- Hoja de estilos CSS -->
-    <!-- <script src="js/script.js"></script> -->
+    <script src="js/script.js"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon"><!-- Favicon -->
 
     <!--Libreria de animaciones-->
@@ -52,9 +52,11 @@
 
         <form id="form" action="https://formspree.io/f/xjvzonwa" method="POST">
             <h2>ESCRIBENOS</h2>
-            <input type="text" name="nombre" placeholder="Ingrese su Nombre" pattern="[a-zA-ZÀ-ÿ ]+" title="Sólo Podés Ingresar Letras Mayúsculas, Minúsculas con Acento y Espacios">
-            <input type="email" name="correo" placeholder="Ingrese su Correo Electronico">
-            <input type="number" name="telefono" placeholder="Ingrese su Numero de Telefono" pattern="[0-9]+" title="Sólo Podés Ingresar Números">
+            <input type="text" name="nombre" placeholder="Ingrese su Nombre" pattern="[a-zA-ZÀ-ÿ ]+"
+                title="Sólo Podés Ingresar Letras Mayúsculas, Minúsculas con Acento y Espacios">
+            <input type="email" name="email" placeholder="Ingrese su Correo Electronico">
+            <input type="number" name="telefono" placeholder="Ingrese su Numero de Telefono" pattern="[0-9]+"
+                title="Sólo Podés Ingresar Números">
             <textarea name="mensaje" placeholder="Escriba aquí su mensaje"></textarea>
             <button type="submit" id="boton">ENVIAR</button>
         </form>
@@ -66,7 +68,7 @@
     <script src="js/template-header.js"></script>
     <script src="js/template-footer.js"></script>
 
-    <script src="js/validaciones.js"></script>
+    <!-- <script src="js/validaciones.js"></script> -->
 </body>
 
 </html>
